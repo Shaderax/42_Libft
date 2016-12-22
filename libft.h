@@ -6,7 +6,7 @@
 /*   By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 13:46:23 by nrouzeva          #+#    #+#             */
-/*   Updated: 2016/11/27 13:48:11 by nrouzeva         ###   ########.fr       */
+/*   Updated: 2016/12/21 10:53:01 by nrouzeva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_atoi(char *str);
-char				*ft_itoa(int n);
+char				*ft_itoa(long long n);
+char				*ft_itoa_base(long long n, int base);
+char				*ft_itoa_hexa(long long n, int base, char *str2);
 void				ft_bzero(void *s, size_t n);
 
 int					ft_isascii(int c);
@@ -77,7 +79,7 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 
 int					ft_sqrt(int nb);
-int					ft_len_number(int n);
+int					ft_len_number(long long n, int base);
 int					ft_wd_count(char const *s, char c);
 char				*ft_split_word(char const *s, char c);
 void				ft_foreach(int *tab, int length, void(*f)(int));

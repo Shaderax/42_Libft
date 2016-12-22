@@ -6,13 +6,13 @@
 /*   By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 11:47:17 by nrouzeva          #+#    #+#             */
-/*   Updated: 2016/11/10 11:50:23 by nrouzeva         ###   ########.fr       */
+/*   Updated: 2016/12/19 17:08:30 by nrouzeva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_len_number(int n)
+int	ft_len_number(long long n, int base)
 {
 	int		len;
 	long	l_nb;
@@ -24,10 +24,10 @@ int	ft_len_number(int n)
 		l_nb = -n;
 		len++;
 	}
-	while (l_nb != l_nb % 10)
+	while (l_nb != l_nb % base)
 	{
 		len++;
-		l_nb = (l_nb - l_nb % 10) / 10;
+		l_nb = (l_nb - l_nb % base) / base;
 	}
 	len++;
 	return (len);
