@@ -6,7 +6,7 @@
 /*   By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 13:46:23 by nrouzeva          #+#    #+#             */
-/*   Updated: 2016/12/21 10:53:01 by nrouzeva         ###   ########.fr       */
+/*   Updated: 2017/01/12 16:25:58 by nrouzeva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char				*ft_itoa(long long n);
 char				*ft_itoa_base(long long n, int base);
 char				*ft_itoa_hexa(long long n, int base, char *str2);
 void				ft_bzero(void *s, size_t n);
+char				*ft_strjfri(char const *s1, char const *s2, int opt);
 
 int					ft_isascii(int c);
 int					ft_isprint(int c);
