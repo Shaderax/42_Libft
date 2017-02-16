@@ -6,13 +6,12 @@
 /*   By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 11:52:37 by nrouzeva          #+#    #+#             */
-/*   Updated: 2016/12/21 10:43:44 by nrouzeva         ###   ########.fr       */
+/*   Updated: 2017/02/03 03:17:59 by nrouzeva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
+#include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 int			ft_len_number_hexa(unsigned long long n, int base)
 {
@@ -33,6 +32,10 @@ char		*ft_itoa_hexa(unsigned long long n, int base, char *str2)
 	int					len;
 	int					i;
 
+	if (n == 0)
+	{
+		return (ft_strdup("0"));
+	}
 	i = 0;
 	len = ft_len_number_hexa(n, base);
 	str = NULL;
@@ -47,4 +50,3 @@ char		*ft_itoa_hexa(unsigned long long n, int base, char *str2)
 	str[len] = '\0';
 	return (str);
 }
-

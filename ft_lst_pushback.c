@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lst_pushback.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nrouzeva <nrouzeva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 14:43:34 by nrouzeva          #+#    #+#             */
-/*   Updated: 2017/01/28 23:18:06 by nrouzeva         ###   ########.fr       */
+/*   Created: 2017/02/14 13:39:04 by nrouzeva          #+#    #+#             */
+/*   Updated: 2017/02/14 13:39:10 by nrouzeva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_lst_pushback(t_list **lst, t_list *new)
 {
-	size_t i;
+	t_list	*tmp;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	tmp = *lst;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
 }

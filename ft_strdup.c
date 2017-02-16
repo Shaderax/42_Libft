@@ -6,7 +6,7 @@
 /*   By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 14:18:29 by nrouzeva          #+#    #+#             */
-/*   Updated: 2016/11/06 11:26:10 by nrouzeva         ###   ########.fr       */
+/*   Updated: 2017/01/17 14:47:39 by nrouzeva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strdup(char *str)
 {
 	char *dest;
 
+	if (!str)
+		return (NULL);
 	dest = (char *)malloc((sizeof(*dest) * ft_strlen(str)) + 1);
 	if (dest)
 		dest = ft_strcpy(dest, str);

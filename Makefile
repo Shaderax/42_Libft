@@ -6,7 +6,7 @@
 #    By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 14:25:16 by nrouzeva          #+#    #+#              #
-#    Updated: 2016/11/10 11:55:46 by nrouzeva         ###   ########.fr        #
+#    Updated: 2017/02/07 19:26:00 by nrouzeva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,9 @@ SRC = ./ft_atoi.c \
 		./ft_isdigit.c \
 		./ft_isprint.c \
 		./ft_itoa.c \
+		./ft_itoa_base.c \
+		./ft_itoa_hexa.c \
+		./ft_itoa_ull.c \
 		./ft_memalloc.c \
 		./ft_memccpy.c \
 		./ft_memchr.c \
@@ -70,27 +73,31 @@ SRC = ./ft_atoi.c \
 		./ft_toupper.c \
 		./ft_lstnew.c \
 		./ft_lstdelone.c \
+		./ft_lst_pushback.c \
 		./ft_lstdel.c \
 		./ft_lstadd.c \
 		./ft_lstiter.c \
 		./ft_lstmap.c \
 		./ft_len_number.c \
+		./ft_len_number_ull.c \
 		./ft_wd_count.c \
-		./ft_split_word.c
+		./ft_split_word.c \
+		./get_next_line.c \
+		./ft_strjfri.c
 
 OBJ = $(SRC:.c=.o)
 
 $(NAME):
-		$(CC) $(CFLAGS) -c $(SRC)
-		ar rc $(NAME) $(OBJ)
-		ranlib $(NAME)
+		@$(CC) $(CFLAGS) -c $(SRC)
+		@ar rc $(NAME) $(OBJ)
+		@ranlib $(NAME)
 
 all: $(NAME)
 
 clean:
-		rm -rf $(OBJ)
+		@rm -rf $(OBJ)
 
 fclean: clean
-		rm -rf $(NAME)
+		@rm -rf $(NAME)
 
 re: fclean all

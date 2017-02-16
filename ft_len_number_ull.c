@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_len_number.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 14:25:46 by nrouzeva          #+#    #+#             */
-/*   Updated: 2017/01/13 14:10:58 by nrouzeva         ###   ########.fr       */
+/*   Created: 2016/11/10 11:47:17 by nrouzeva          #+#    #+#             */
+/*   Updated: 2017/01/18 15:11:18 by nrouzeva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjfri(char const *s1, char const *s2, int opt)
+int	ft_len_number_ull(unsigned long long n, int base)
 {
-	char *str;
+	int		len;
 
-	str = NULL;
-	if (s1 && s2)
+	len = 0;
+	while (n != n % base)
 	{
-		if (!(str = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1)))
-			return (NULL);
-		str = ft_strcpy(str, s1);
-		str = ft_strcat(str, s2);
-		if (opt == 1)
-			ft_strdel((char **)&s1);
-		if (opt == 2)
-			ft_strdel((char **)&s2);
-		if (opt == 3)
-		{
-			ft_strdel((char **)&s1);
-			ft_strdel((char **)&s2);
-		}
+		len++;
+		n = (n - n % base) / base;
 	}
-	return (str);
+	len++;
+	return (len);
 }

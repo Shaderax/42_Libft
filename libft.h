@@ -6,7 +6,7 @@
 /*   By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 13:46:23 by nrouzeva          #+#    #+#             */
-/*   Updated: 2017/01/12 16:25:58 by nrouzeva         ###   ########.fr       */
+/*   Updated: 2017/02/07 19:27:48 by nrouzeva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@
 
 # include <string.h>
 # include <stdlib.h>
+# include "unistd.h"
 
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_atoi(char *str);
 char				*ft_itoa(long long n);
-char				*ft_itoa_base(long long n, int base);
-char				*ft_itoa_hexa(long long n, int base, char *str2);
+char				*ft_itoa_ull(unsigned long long n, int base);
+char				*ft_itoa_base(long long n, int base, char *str2);
+char				*ft_itoa_hexa(unsigned long long n, int base, char *str2);
 void				ft_bzero(void *s, size_t n);
 char				*ft_strjfri(char const *s1, char const *s2, int opt);
 
@@ -81,6 +83,7 @@ void				ft_putendl_fd(char const *s, int fd);
 
 int					ft_sqrt(int nb);
 int					ft_len_number(long long n, int base);
+int					ft_len_number_ull(unsigned long long n, int base);
 int					ft_wd_count(char const *s, char c);
 char				*ft_split_word(char const *s, char c);
 void				ft_foreach(int *tab, int length, void(*f)(int));
@@ -92,6 +95,7 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+void				ft_lst_pushback(t_list **lst, t_list *new);
 void				ft_lstadd(t_list **alst, t_list *news);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
