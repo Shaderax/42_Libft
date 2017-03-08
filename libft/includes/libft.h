@@ -6,7 +6,7 @@
 /*   By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 13:46:23 by nrouzeva          #+#    #+#             */
-/*   Updated: 2017/02/07 19:27:48 by nrouzeva         ###   ########.fr       */
+/*   Updated: 2017/02/26 13:14:09 by nrouzeva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ int					ft_len_number_ull(unsigned long long n, int base);
 int					ft_wd_count(char const *s, char c);
 char				*ft_split_word(char const *s, char c);
 void				ft_foreach(int *tab, int length, void(*f)(int));
+int					get_next_line(int const fd, char **line);
 
 typedef	struct		s_list
 {
