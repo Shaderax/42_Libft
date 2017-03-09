@@ -6,7 +6,7 @@
 #    By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 14:25:16 by nrouzeva          #+#    #+#              #
-#    Updated: 2017/03/08 17:08:56 by nrouzeva         ###   ########.fr        #
+#    Updated: 2017/03/09 13:35:51 by nrouzeva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,10 @@ CFLAGS = -Wall -Wextra -Werror
 
 
 OBJ_PATH = ./obj
-SRC_PATH = ./libft
+SRC_LIB_PATH = ./libft
 SRC_PRINTF_PATH = ./printf
 
-
-SRC_LIB =		ft_atoi.c \
+SRC_LIB_NAME =	ft_atoi.c \
 			ft_bzero.c \
 			ft_isalnum.c \
 			ft_isalpha.c \
@@ -91,7 +90,7 @@ SRC_LIB =		ft_atoi.c \
 			get_next_line.c \
 			ft_strjfri.c
 
-SRCPRINTF = converter_address_p_v.c \
+SRC_PRINTF_NAME = converter_address_p_v.c \
 			converter_caractere.c \
 			converter_di_sd.c \
 			converter_long_d_lsd.c \
@@ -115,16 +114,28 @@ SRCPRINTF = converter_address_p_v.c \
 			option_application_hexa.c \
 			option_application_octal.c
 
-OBJ = $(SRC:.c=.o)
+OBJ_NAME_LIB = $(SRC_LIB_NAME:.c=.o)
+OBJ_NAME_PRINTF = $(SRC_PRINTF_NAME:.c=.o)
+
+OBJ_LIB = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME_LIB))
+OBJ_PRINTF = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME_PRINTF))
+
+SRC_LIB = $(addprefix $(SRC_LIB_PATH)/,$(SRC_LIB_NAME))
+SRC_PRINTF = $(addprefix $(SRC_PRINTF_PATH)/,$(SRC_PRINTF_NAME))
 
 .PHONY: all, clean, fclean, re
 
-$(NAME):
-	@$(CC) $(CFLAGS) -c $(SRC)
-	@ar rc $(NAME) $(OBJ)
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	@$(CC) $(CFLAGS) -c $(SRC_LIB) $(SRC_PRINTF)
+	@ar rc $(NAME) $(OBJ_NAME_LIB) $(OBJ_NAME_PRINTF)
 	@ranlib $(NAME)
 
-all: $(NAME)
+$(OBJ_PATH)/%.o: $(SRC_LIB_PATH)/%.c $(SRC_PRINTF_PATH)/%c
+		@mkdir $(OBJ_PATH) 2> /dev/null || true
+		@$(CC) $(CFLAGS) -o $@ -c $<
+		@echo "$(GREEN)[✓]$(NC) Objects compiled"
 
 clean:
 	@rm -rf $(OBJ)
