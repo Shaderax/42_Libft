@@ -6,7 +6,7 @@
 /*   By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 13:46:23 by nrouzeva          #+#    #+#             */
-/*   Updated: 2017/02/26 13:14:09 by nrouzeva         ###   ########.fr       */
+/*   Updated: 2017/03/10 17:23:56 by nrouzeva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include "unistd.h"
+# include "ft_printf.h"
 
 int					ft_tolower(int c);
 int					ft_toupper(int c);
@@ -82,12 +83,13 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 
 int					ft_sqrt(int nb);
+int					ft_wd_count(char const *s, char c);
 int					ft_len_number(long long n, int base);
 int					ft_len_number_ull(unsigned long long n, int base);
-int					ft_wd_count(char const *s, char c);
 char				*ft_split_word(char const *s, char c);
 void				ft_foreach(int *tab, int length, void(*f)(int));
 int					get_next_line(int const fd, char **line);
+void				ft_tabdel(void **tab, int height);
 
 typedef	struct		s_list
 {
@@ -96,11 +98,11 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-void				ft_lst_pushback(t_list **lst, t_list *new);
 void				ft_lstadd(t_list **alst, t_list *news);
+void				ft_lst_pushback(t_list **lst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 

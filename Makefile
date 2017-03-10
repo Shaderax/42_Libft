@@ -6,7 +6,7 @@
 #    By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 14:25:16 by nrouzeva          #+#    #+#              #
-#    Updated: 2017/03/10 14:27:06 by nrouzeva         ###   ########.fr        #
+#    Updated: 2017/03/10 15:30:01 by nrouzeva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,8 @@ SRC_LIB_NAME =	ft_atoi.c \
 			ft_split_word.c \
 			get_next_line.c \
 			ft_strjfri.c \
-			ft_sqrt.c
+			ft_sqrt.c \
+			ft_tabdel.c
 
 SRC_PRINTF_NAME = converter_address_p_v.c \
 			converter_caractere.c \
