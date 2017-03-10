@@ -6,7 +6,7 @@
 #    By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 14:25:16 by nrouzeva          #+#    #+#              #
-#    Updated: 2017/03/09 16:02:56 by nrouzeva         ###   ########.fr        #
+#    Updated: 2017/03/10 14:27:06 by nrouzeva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,8 @@ SRC_LIB_NAME =	ft_atoi.c \
 			ft_wd_count.c \
 			ft_split_word.c \
 			get_next_line.c \
-			ft_strjfri.c
+			ft_strjfri.c \
+			ft_sqrt.c
 
 SRC_PRINTF_NAME = converter_address_p_v.c \
 			converter_caractere.c \
@@ -128,9 +129,13 @@ $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 
-$(OBJ_PATH)/%.o: $(SRC_LIB) $(SRC_PRINTF)
+$(OBJ_PATH)/%.o: libft/%.c libft/includes/get_next_line.h libft/includes/libft.h printf/ft_printf.h printf/struct.h Makefile
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -o $@ -c $< -I ./libft/includes/
+	@$(CC) $(CFLAGS) -o $@ -c $< -I ./libft/includes/ -I ./printf/
+
+$(OBJ_PATH)/%.o: printf/%.c libft/includes/get_next_line.h libft/includes/libft.h printf/ft_printf.h printf/struct.h Makefile
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
+	@$(CC) $(CFLAGS) -o $@ -c $< -I ./libft/includes/ -I ./printf/
 
 clean:
 	@rm -rf $(OBJ_PATH) 2> /dev/null || true
