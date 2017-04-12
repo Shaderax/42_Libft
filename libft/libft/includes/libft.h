@@ -6,7 +6,7 @@
 /*   By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 13:46:23 by nrouzeva          #+#    #+#             */
-/*   Updated: 2017/03/21 15:28:14 by nrouzeva         ###   ########.fr       */
+/*   Updated: 2017/04/12 00:28:29 by nrouzeva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,6 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
+void				ft_del(void *d, size_t size);
 
 #endif

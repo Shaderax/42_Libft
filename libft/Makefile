@@ -6,7 +6,7 @@
 #    By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 14:25:16 by nrouzeva          #+#    #+#              #
-#    Updated: 2017/03/21 15:28:47 by nrouzeva         ###   ########.fr        #
+#    Updated: 2017/04/12 00:29:15 by nrouzeva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra #-Werror
 
 OBJ_PATH = ./obj
 SRC_LIB_PATH = ./libft
@@ -82,6 +82,7 @@ SRC_LIB_NAME =	ft_atoi.c \
 			ft_lstadd.c \
 			ft_lstiter.c \
 			ft_lstmap.c \
+			ft_del.c \
 			ft_len_number.c \
 			ft_len_number_ull.c \
 			ft_wd_count.c \
