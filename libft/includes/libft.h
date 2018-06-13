@@ -6,7 +6,7 @@
 /*   By: nrouzeva <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 13:46:23 by nrouzeva          #+#    #+#             */
-/*   Updated: 2017/04/12 00:28:29 by nrouzeva         ###   ########.fr       */
+/*   Updated: 2018/05/25 11:31:33 by nrouzeva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include "unistd.h"
-# include "ft_printf.h"
+# include "../../printf/ft_printf.h"
 
 int					ft_tolower(int c);
 int					ft_toupper(int c);
@@ -26,6 +26,7 @@ char				*ft_itoa(long long n);
 char				*ft_itoa_ull(unsigned long long n, int base);
 char				*ft_itoa_base(long long n, int base, char *str2);
 char				*ft_itoa_hexa(unsigned long long n, int base, char *str2);
+void				ft_print_addr(unsigned long long n);
 char				*ft_strjfri(char const *s1, char const *s2, int opt);
 void				ft_bzero(void *s, size_t n);
 double				ft_atof(const char *str);

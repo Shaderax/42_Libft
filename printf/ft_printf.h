@@ -6,7 +6,7 @@
 /*   By: nrouzeva <nrouzeva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/03 03:22:51 by nrouzeva          #+#    #+#             */
-/*   Updated: 2017/03/09 14:27:14 by nrouzeva         ###   ########.fr       */
+/*   Updated: 2018/05/20 18:47:03 by nrouzeva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "libft.h"
+# include "../libft/includes/libft.h"
 # include <wchar.h>
 # include "struct.h"
 # include <stddef.h>
